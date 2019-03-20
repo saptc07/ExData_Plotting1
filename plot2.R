@@ -11,11 +11,15 @@ plot2 <- function(){
         powerdata$Time <- format(powerdata$Time, format="%H:%M:%S")
         powerdata$Global_active_power <- as.numeric(powerdata$Global_active_power)
          
-        ## subset data from 2007/02/01 and 2007/02/02
+        ## subset data between 2007/02/01 and 2007/02/02
         subsetdata <- subset(powerdata, Date == "2007/02/01" | Date =="2007/02/02")
         
-        ## plot globalactivepower vs date&time
+        ## create png file
         png("plot2.png", width=480, height=480)
+         
+        ## plot line graph of type("1") for globalactivepower vs date&time
         with(subsetdata, plot(FullTimeDate, Global_active_power, type="l", xlab="Day", ylab="Global Active Power (kilowatts)"))
+         
+        ## close graphic device
         dev.off()
 }
