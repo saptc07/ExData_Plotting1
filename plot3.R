@@ -13,14 +13,18 @@ plot3 <- function(){
         powerdata$Sub_metering_2 <- as.numeric(powerdata$Sub_metering_2)
         powerdata$Sub_metering_3 <- as.numeric(powerdata$Sub_metering_3)
         
-        ## subset data from 2007/02/01 and 2007/02/02
+        ## subset data between 2007/02/01 and 2007/02/02
         subsetdata <- subset(powerdata, Date == "2007/02/01" | Date =="2007/02/02")
         
-        ## generate a plot of different submetering vs time
+        ## create png file
         png("plot3.png", width=480, height=480)
+        
+         ## generate a plot of different submetering vs time
         with(subsetdata, plot(FullTimeDate, Sub_metering_1, type="l", xlab="Day", ylab="Energy sub metering"))
         lines(subsetdata$FullTimeDate, subsetdata$Sub_metering_2,type="l", col= "red")
         lines(subsetdata$FullTimeDate, subsetdata$Sub_metering_3,type="l", col= "blue")
         legend(c("topright"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty= 1, lwd=2, col = c("black", "red", "blue"))
+        
+        ## close graphic device
         dev.off()
 }
