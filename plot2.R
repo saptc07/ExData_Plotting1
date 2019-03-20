@@ -1,5 +1,5 @@
 plot2 <- function(){
-         ## read data
+         ## read household_power_consumption data
         powerdata <- read.table("./household_power_consumption.txt", stringsAsFactors = FALSE, header = TRUE, sep =";"  )
         
         ## Create column in table with date and time merged together
