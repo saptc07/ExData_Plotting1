@@ -6,7 +6,7 @@ plot1<- function(){
          
         powerdata$Global_active_power <- as.numeric(powerdata$Global_active_power)
         
-        ## subset data from 2007-02-01 and 2007-02-02
+        ## subset data from 2007/02/01 and 2007/02/02
         subsetdata <- subset(powerdata, Date == "2007/02-/01" | Date =="2007-/02-/02")
         
         ## plot histogram of global active power for those 2 days
