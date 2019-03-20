@@ -13,7 +13,7 @@ plot3 <- function(){
         powerdata$Sub_metering_2 <- as.numeric(powerdata$Sub_metering_2)
         powerdata$Sub_metering_3 <- as.numeric(powerdata$Sub_metering_3)
         
-        ## subset data from 2007-02-01 and 2007-02-02
+        ## subset data from 2007/02/01 and 2007/02/02
         subsetdata <- subset(powerdata, Date == "2007/02/01" | Date =="2007/02/02")
         
         ## generate a plot of different submetering vs time
